@@ -14,7 +14,12 @@ jobs:
       - run: npm ci
       - run: npm run coverage
       - run: npm run build
-      # - uses: zgosalvez/github-actions-report-lcov@v3.0.4
+      - uses: zgosalvez/github-actions-report-lcov@v3
+        with:
+          coverage-files: coverage/lcov.*.info
+          minimum-coverage: 90
+          artifact-name: code-coverage-report
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
