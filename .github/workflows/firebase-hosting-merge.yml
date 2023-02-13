@@ -10,9 +10,9 @@ name: Deploy to Firebase Hosting on merge
 #   build_and_deploy:
 #     runs-on: ubuntu-latest
 #     steps:
-      # - uses: actions/checkout@v3
-      # - run: npm ci
-      # - run: npm run coverage
+#       - uses: actions/checkout@v3
+#       - run: npm ci
+#       - run: npm run coverage
 #       - run: npm run build
 #       - uses: SonarSource/sonarcloud-github-action@master
 #         env:
@@ -30,8 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        - run: npm ci
-        - run: npm run coverage
+      - run: npm ci
+      - run: npm run coverage
       - name: Code Coverage Report
         uses: irongut/CodeCoverageSummary@v1.3.0
         with:
