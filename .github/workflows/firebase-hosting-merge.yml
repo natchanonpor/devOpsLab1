@@ -14,10 +14,7 @@ jobs:
       - run: npm ci
       - run: npm run coverage
       - run: npm run build
-      - uses: danhunsaker/clover-reporter-action@v0.2.17-clover
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          clover-file: ./coverage/clover.xml
+      - uses: ArtiomTr/jest-coverage-report-action@v2
       - uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
