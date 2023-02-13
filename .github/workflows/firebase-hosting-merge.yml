@@ -31,14 +31,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: npm ci
-      - run: npm run coverage
-      - run: npm install -g istanbul
-      - run: npx istanbul report lcovonly --dir=coverage && cat coverage/lcov.info | npx coveralls
-      - name: Upload coverage
-        uses: actions/upload-artifact@v2
+      - run: npm run coverage                 # run tests (configured to use jest-junit reporter)
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
         with:
-          name: coverage
-          path: coverage/lcov.xml
+          name: JEST Tests            # Name of the check run which will be created
+          path: "**/clover.xml"    # Path to test results
+          reporter: jest-junit        # Format of test results
 
 
 # jobs:
