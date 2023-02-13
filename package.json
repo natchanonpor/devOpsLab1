@@ -52,7 +52,7 @@
     },
     "coveragePathIgnorePatterns": [
       "src/index.tsx",
-      "src/reportWebVitals.tsx"
+      "src/reportWebVitals.ts"
     ]
   }
 }
