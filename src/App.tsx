@@ -17,7 +17,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          learn react {logic(1,2)}
+          learn react {logic(1,20)}
         </a>
       </header>
     </div>
