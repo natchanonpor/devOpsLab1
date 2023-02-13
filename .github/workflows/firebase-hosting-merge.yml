@@ -33,10 +33,10 @@ jobs:
       - run: npm ci
       - run: npm run coverage
       - name: Upload coverage
-      uses: actions/upload-artifact@v2
-      with:
-        name: coverage
-        path: coverage/lcov.xml
+      - uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: coverage/lcov.xml
 
 
 # jobs:
