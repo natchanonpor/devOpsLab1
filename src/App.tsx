@@ -17,7 +17,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          hellow world!! learn react {logic(1,20)}
+          CPF learn react {logic(1,20)}
         </a>
       </header>
     </div>

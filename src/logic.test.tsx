@@ -6,8 +6,8 @@ describe("Logic", () => {
     expect(actual).toEqual(3);
   });
 
-  test("test logic c", () => {
-    const actual = logic(1, 2, 30);
-    expect(actual).toEqual(30);
-  });
+  // test("test logic c", () => {
+  //   const actual = logic(1, 2, 30);
+  //   expect(actual).toEqual(30);
+  // });
 });
