@@ -10,7 +10,7 @@ function App() {
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     setMyText((prevArray) => [...prevArray, name]);
-    setName('');
+    setName("");
   };
 
   const handleAbort = (event: { preventDefault: () => void }) => {
@@ -26,6 +26,7 @@ function App() {
             <label>
               Enter Text:
               <input
+                role="inputText"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -36,7 +37,7 @@ function App() {
           </form>
         </div>
 
-        <ul>
+        <ul role="myText">
           {myText.map((text, index) => (
             <p key={index}>{text}</p>
           ))}
