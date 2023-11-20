@@ -18,11 +18,11 @@ describe("test react", () => {
     const submitButton = screen.getByText("submit");
     fireEvent.click(submitButton);
 
-    const myText = screen.getByRole("myText");
-    expect(myText).toHaveTextContent("new value");
+    const menuitem = screen.getByRole("menuitem");
+    expect(menuitem).toHaveTextContent("new value");
 
     const abortButton = screen.getByText("remove");
     fireEvent.click(abortButton);
-    expect(myText).toHaveTextContent("");
+    expect(menuitem).toHaveTextContent("");
   });
 });

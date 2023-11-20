@@ -24,9 +24,9 @@ function App() {
         <div>
           <form onSubmit={handleSubmit}>
             <label>
-              Enter Text:
+              <p>Enter Text:</p>
               <input
-                role="inputText"
+                role="menuitem"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -37,7 +37,7 @@ function App() {
           </form>
         </div>
 
-        <ul role="myText">
+        <ul role="menuitem">
           {myText.map((text, index) => (
             <p key={index}>{text}</p>
           ))}
