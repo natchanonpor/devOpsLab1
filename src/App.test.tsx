@@ -12,7 +12,7 @@ describe("test react", () => {
 
   test("renders click submit and remove", () => {
     render(<App />);
-    const inputText = screen.getByRole("inputText");
+    const inputText = screen.getByText("Enter Text:");
     userEvent.type(inputText, "new value");
 
     const submitButton = screen.getByText("submit");

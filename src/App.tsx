@@ -26,7 +26,6 @@ function App() {
             <label>
               <p>Enter Text:</p>
               <input
-                role="menuitem"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -39,7 +38,7 @@ function App() {
 
         <ul role="menuitem">
           {myText.map((text, index) => (
-            <p key={index}>{text}</p>
+            <li key={index}>{text}</li>
           ))}
         </ul>
 
