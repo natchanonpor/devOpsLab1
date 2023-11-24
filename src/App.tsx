@@ -19,9 +19,10 @@ function App() {
   };
 
   const callApi = async () => {
-    const res = await fetch(process.env.REACT_APP_BACKEND_URL || "");
+    const res = await fetch(process.env.REACT_APP_BACKEND_URL!);
     const data = await res.text();
-    console.log(data);
+    setMyText((prevArray) => [...prevArray, data]);
+    setName("");
   };
 
   return (

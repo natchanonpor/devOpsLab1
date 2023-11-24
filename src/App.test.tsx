@@ -1,7 +1,11 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import App from "./App";
 import userEvent from "@testing-library/user-event";
+
+afterEach(() => {
+  jest.restoreAllMocks();
+});
 
 describe("test react", () => {
   test("renders learn react link", () => {
@@ -25,4 +29,28 @@ describe("test react", () => {
     fireEvent.click(abortButton);
     expect(menuitem).toHaveTextContent("");
   });
+
+  test("render fetch", async () => {
+    render(<App />);
+
+    jest.spyOn(global, "fetch").mockResolvedValue({
+      text: jest.fn().mockResolvedValue("text from backend"),
+      // json: jest.fn().mockResolvedValue(mockResponse),
+    } as any);
+
+    const callAPIButton = screen.getByRole("button", {
+      name: /CALL API/i,
+    });
+
+    await act(async () => {
+      callAPIWrapper(callAPIButton);
+    });
+
+    const menuitem = screen.getByRole("menuitem");
+    expect(menuitem).toHaveTextContent("text from backend");
+  });
 });
+
+function callAPIWrapper(callAPIButton: any) {
+  fireEvent.click(callAPIButton);
+}
