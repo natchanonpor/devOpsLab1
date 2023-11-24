@@ -58,7 +58,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          CPF learn react {logic(1, 20)}
+          learn react {logic(1, 20)}
         </a>
         <button onClick={callApi}>CALL API</button>
       </header>
