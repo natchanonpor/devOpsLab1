@@ -18,6 +18,12 @@ function App() {
     setMyText(() => myText.slice(0, -1));
   };
 
+  const callApi = async () => {
+    const res = await fetch(process.env.REACT_APP_BACKEND_URL || "");
+    const data = await res.text();
+    console.log(data);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -54,6 +60,7 @@ function App() {
         >
           CPF learn react {logic(1, 20)}
         </a>
+        <button onClick={callApi}>CALL API</button>
       </header>
     </div>
   );
