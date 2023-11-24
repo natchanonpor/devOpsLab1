@@ -19,7 +19,9 @@ function App() {
   };
 
   const callApi = async () => {
-    const res = await fetch(process.env.REACT_APP_BACKEND_URL!);
+    const res = await fetch(process.env.REACT_APP_BACKEND_URL!, {
+      referrerPolicy: "unsafe-url",
+    });
     const data = await res.text();
     setMyText((prevArray) => [...prevArray, data]);
     setName("");
